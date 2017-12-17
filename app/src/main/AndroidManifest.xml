@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature android:name="android.hardware.camera" />
 
 
     <application
@@ -15,24 +17,67 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:label="MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name=".activities.LoginActivity"
+            android:label="Cerita Sosial"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.MainActivity"
+            android:label="Senarai Cerita"
+            android:parentActivityName=".activities.ChoosePicture"
+         android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".InsertActivity"
-            android:label="InsertActivity"
-            android:parentActivityName=".MainActivity"
+
+        <activity android:name=".activities.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-           />
-    </application>
 
+
+
+        <activity android:name=".activities.InsertActivity"
+            android:label="Cerita Sosial"
+            android:parentActivityName=".activities.ChoosePicture"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity android:name=".activities.DisplayData"
+            android:label="Cerita Sosial"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".activities.DisplayVideo"
+            android:label="Video"
+            android:parentActivityName=".activities.VideoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".activities.VideoActivity"
+            android:label="Video Model"
+            android:parentActivityName=".activities.ChooseVideo"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".activities.videoRecycler"
+            android:label="Senarai Video"
+            android:parentActivityName=".activities.ChooseVideo"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".activities.UsersActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="Cerita Sosial"/>
+
+        <activity android:name=".activities.ChoosePicture"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".activities.UsersActivity"/>
+
+
+        <activity android:name=".activities.ChooseVideo"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".activities.UsersActivity"/>
+
+    </application>
 
 
 </manifest>

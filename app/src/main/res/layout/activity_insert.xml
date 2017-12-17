@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mursyidah.educationfirebase.InsertActivity">
+    android:background="@drawable/wallgreen"
+    tools:context="com.example.mursyidah.educationfirebase.activities.InsertActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-        tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp"
-        android:id="@+id/appBarLayout">
+        tools:layout_editor_absoluteY="0dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="45dp"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -25,20 +26,21 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="350dp"
-        android:layout_height="230dp"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/appBarLayout"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:background="#00ffffff"
-        app:srcCompat="@drawable/viewfinder" />
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/add_btn" />
 
     <EditText
         android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/imageButton"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
@@ -46,31 +48,61 @@
         android:ems="10"
         android:hint="Tajuk.."
         android:inputType="textPersonName"
-        android:padding="15dp" />
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/titleText"
         android:layout_below="@+id/titleText"
-        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="11dp"
         android:background="@drawable/outline"
         android:ems="10"
         android:hint="Keterangan.."
         android:inputType="textMultiLine"
-        android:padding="15dp" />
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#ffffff"
-        android:text="SIMPAN" />
+        android:text="SIMPAN"
+        android:textColor="#ffffff" />
+
+    <ImageButton
+        android:id="@+id/play"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/record"
+        android:layout_toStartOf="@+id/record"
+        android:onClick="playAudio"
+        app:srcCompat="@drawable/play_button" />
+
+    <ImageButton
+        android:id="@+id/record"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submit"
+        android:layout_centerHorizontal="true"
+        android:onClick="recordAudio"
+        app:srcCompat="@drawable/record_button" />
+
+    <ImageButton
+        android:id="@+id/stop"
+        style="@android:style/Widget.Holo.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/record"
+        android:layout_toEndOf="@+id/record"
+        android:onClick="stopAudio"
+        app:srcCompat="@drawable/stop_button" />
+
 
 </RelativeLayout>
